@@ -95,7 +95,7 @@ jobs:
           ./scripts/feeds install -d n luci-theme-kucat
           make download -j8
 
-      - name: Configure Argon (master)
+      - name: Configure Kucat (master)
         run: |
           cd sdk
           ./scripts/feeds install luci-app-kucat-config
@@ -110,7 +110,7 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-kucat-config=m" >> .config
           make defconfig
 
-      - name: Compile Argon (master)
+      - name: Compile Kucat (master)
         id: compile
         run: |
           cd sdk
@@ -121,7 +121,7 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
 
-      - name: Upload Argon (master) apks to release
+      - name: Upload Kucat (master) apks to release
         if: steps.compile.outputs.status == 'success'
         uses: softprops/action-gh-release@v1
         env:

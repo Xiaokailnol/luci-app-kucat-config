@@ -129,5 +129,5 @@ jobs:
         with:
           tag_name: ${{ needs.job_check.outputs.argon_version }}
           files: |
-            ${{ env.FIRMWARE }}/base/luci-app-kucat-config_*.apk
-            ${{ env.FIRMWARE }}/base/luci-i18n-kucat-config-zh-cn_*.apk
+            ${{ env.FIRMWARE }}/base/luci-app-kucat-config-*.apk
+            ${{ env.FIRMWARE }}/base/luci-i18n-kucat-config-zh-cn-*.apk

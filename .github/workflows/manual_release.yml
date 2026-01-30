@@ -92,7 +92,7 @@ jobs:
           git clone -b master https://github.com/${{ github.repository }}.git package/downloads/luci-app-kucat-config
           ./scripts/feeds update -a
           echo "CONFIG_PACKAGE_luci-app-kucat-config=m" > .config
-          ./scripts/feeds install -d n luci-theme-kucat
+          ./scripts/feeds install -d n luci-app-kucat-config
           make download -j8
 
       - name: Configure Kucat (master)
